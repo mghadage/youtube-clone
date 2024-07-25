@@ -16,11 +16,18 @@ const VideoCard = ({ video }) => {
     }
   };
 
+  const truncateText = (text, maxLength) => {
+    if (text.length <= maxLength) {
+      return text;
+    }
+    return text.slice(0, maxLength) + "...";
+  };
+
   return (
-    <div className="max-w-sm rounded-lg overflow-hidden shadow-lg m-2 cursor-pointer">
+    <div className="max-w-72 rounded-lg overflow-hidden shadow-lg m-2">
       <img className="w-full" src={thumbnails.high.url} alt={title} />
       <div className="px-6 py-4">
-        <div className="font-bold text-xl mb-2">{title}</div>
+        <div className="font-bold text-xl mb-2">{truncateText(title, 35)}</div>
         <div className="flex items-center space-x-2">
           <img
             className="w-10 h-10 rounded-full"

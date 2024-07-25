@@ -18,7 +18,7 @@ const listOfButtons = [
 const ButtonList = () => {
   return (
     // <div className="flex ml-5 mt-2 sticky">
-    <div className="flex mt-2 sticky top-16 z-40 w-full z-50 bg-white">
+    <div className="flex flex-wrap ml-6 py-2 sticky top-16 z-40 w-full bg-white">
       {listOfButtons.map((buttonLabel, index) => (
         <Button key={index} name={buttonLabel} />
       ))}

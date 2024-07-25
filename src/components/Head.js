@@ -10,8 +10,8 @@ const Head = () => {
 
   return (
     // <div className="grid grid-flow-col pb-2 m-2 sticky top-2">
-    <div className="grid grid-flow-col pb-2 m-2 sticky top-2 bg-white z-50">
-      <div className="flex col-span-1 py-2">
+    <div className="grid grid-flow-col py-2 sticky top-0 bg-white z-50">
+      <div className="flex col-span-1 py-2 pl-2">
         <img
           onClick={() => toggleMenuHandler()}
           className="h-6 px-3 cursor-pointer"

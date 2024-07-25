@@ -11,6 +11,7 @@ import {
   MdWhatshot,
   MdLiveTv,
 } from "react-icons/md";
+import { Link } from "react-router-dom";
 
 const Sidebar = () => {
   const isMenuOpen = useSelector((store) => store.app.isMenuOpen);
@@ -18,15 +19,15 @@ const Sidebar = () => {
   if (!isMenuOpen) return null; // this is known as early return pattern
 
   const menuItems = [
-    { icon: MdHome, label: "Home" },
-    { icon: MdExplore, label: "Explore" },
-    { icon: MdSubscriptions, label: "Subscriptions" },
-    { icon: MdVideoLibrary, label: "Library" },
-    { icon: MdHistory, label: "History" },
-    { icon: MdWatchLater, label: "Watch Later" },
-    { icon: MdThumbUp, label: "Liked Videos" },
-    { icon: MdWhatshot, label: "Trending" },
-    { icon: MdLiveTv, label: "Live" },
+    { icon: MdHome, label: "Home", link: "/" },
+    { icon: MdExplore, label: "Explore", link: "/" },
+    { icon: MdSubscriptions, label: "Subscriptions", link: "/" },
+    { icon: MdVideoLibrary, label: "Library", link: "/" },
+    { icon: MdHistory, label: "History", link: "/" },
+    { icon: MdWatchLater, label: "Watch Later", link: "/" },
+    { icon: MdThumbUp, label: "Liked Videos", link: "/" },
+    { icon: MdWhatshot, label: "Trending", link: "/" },
+    { icon: MdLiveTv, label: "Live", link: "/" },
   ];
 
   return (
@@ -34,13 +35,15 @@ const Sidebar = () => {
     <div className="w-64 h-screen sticky top-16 ">
       <div className="flex flex-col items-start p-4 space-y-1">
         {menuItems.map((item, index) => (
-          <button
-            key={index}
-            className="flex items-center w-full p-2 rounde hover:bg-gray-200"
-          >
-            <item.icon className="mr-4" size={24} />
-            <span>{item.label}</span>
-          </button>
+          <Link to={item.link}>
+            <button
+              key={index}
+              className="flex items-center w-full p-2 rounde hover:bg-gray-200"
+            >
+              <item.icon className="mr-4" size={24} />
+              <span>{item.label}</span>
+            </button>
+          </Link>
         ))}
       </div>
     </div>
