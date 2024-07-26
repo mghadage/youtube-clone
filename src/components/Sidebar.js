@@ -20,7 +20,7 @@ const Sidebar = () => {
 
   const menuItems = [
     { icon: MdHome, label: "Home", link: "/" },
-    { icon: MdExplore, label: "Explore", link: "/" },
+    { icon: MdExplore, label: "Shorts", link: "/" },
     { icon: MdSubscriptions, label: "Subscriptions", link: "/" },
     { icon: MdVideoLibrary, label: "Library", link: "/" },
     { icon: MdHistory, label: "History", link: "/" },
@@ -31,23 +31,21 @@ const Sidebar = () => {
   ];
 
   return (
-    // <div className="p-5 shadow-lg w-48">
-    <div className="w-64 h-screen sticky top-16 ">
-      <div className="flex flex-col items-start p-4 space-y-1">
+    <div className="p-3 shadow-lg w-56">
+      <ul className="">
         {menuItems.map((item, index) => (
           <Link to={item.link}>
-            <button
+            <li
               key={index}
-              className="flex items-center w-full p-2 rounde hover:bg-gray-200"
+              className="flex w-full p-2 mb-1 hover:bg-gray-200 hover:rounded-lg"
             >
               <item.icon className="mr-4" size={24} />
               <span>{item.label}</span>
-            </button>
+            </li>
           </Link>
         ))}
-      </div>
+      </ul>
     </div>
-    // </div>
   );
 };
 

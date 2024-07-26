@@ -24,10 +24,10 @@ const VideoCard = ({ video }) => {
   };
 
   return (
-    <div className="max-w-72 rounded-lg overflow-hidden shadow-lg m-2">
+    <div className="max-w-[284px] rounded-lg overflow-hidden shadow-lg m-2">
       <img className="w-full" src={thumbnails.high.url} alt={title} />
-      <div className="px-6 py-4">
-        <div className="font-bold text-xl mb-2">{truncateText(title, 35)}</div>
+      <div className="px-2 py-2">
+        <div className="font-bold text-md mb-2">{truncateText(title, 48)}</div>
         <div className="flex items-center space-x-2">
           <img
             className="w-10 h-10 rounded-full"

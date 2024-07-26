@@ -13,12 +13,13 @@ const listOfButtons = [
   "History",
   "Recently Uploaded",
   "Watched",
+  "Karma",
 ];
 
 const ButtonList = () => {
   return (
     // <div className="flex ml-5 mt-2 sticky">
-    <div className="flex flex-wrap ml-6 py-2 sticky top-16 z-40 w-full bg-white">
+    <div className="flex flex-wrap ml-6 py-1 sticky top-16 z-40 w-full bg-white">
       {listOfButtons.map((buttonLabel, index) => (
         <Button key={index} name={buttonLabel} />
       ))}
